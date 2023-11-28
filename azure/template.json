@@ -41,13 +41,13 @@
         "keyVaultCertificateName": {
             "type": "string"
         },
-        "<sharedFrontEndAppServicePlanName> or <sharedBackEndAppServicePlanName>": { //PLACEHOLDER
+        "<sharedFrontEndAppServicePlanName>": {
             "type": "string"
         },
-        "<sharedFrontEndSubnetResourceId> or <sharedBackEndSubnetResourceId>": { //PLACEHOLDER
+        "<sharedFrontEndSubnetResourceId>": {
             "type": "string"
         },
-        "<frontEndAccessRestrictions> or <backEndAccessRestrictions>": { //PLACEHOLDER
+        "<frontEndAccessRestrictions>": {
             "type": "array"
         },
         "logAnalyticsSubscriptionId": {
