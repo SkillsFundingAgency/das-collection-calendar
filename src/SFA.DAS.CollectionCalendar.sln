@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DAS.CollectionCalendar.InnerAPI", "SFA.DAS.CollectionCalendar.InnerAPI\SFA.DAS.CollectionCalendar.InnerAPI.csproj", "{855C1A09-A30C-46BC-A6BC-56067FFE7935}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.CollectionCalendar.Infrastructure", "SFA.DAS.CollectionCalendar.Infrastructure\SFA.DAS.CollectionCalendar.Infrastructure.csproj", "{66CC823C-6335-49F1-A1BC-F478EBD351C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.CollectionCalendar.DataAccess", "SFA.DAS.CollectionCalendar.DataAccess\SFA.DAS.CollectionCalendar.DataAccess.csproj", "{6A5ABB33-FF20-417B-9D77-38917DBBC7F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.CollectionCalendar.Queries", "SFA.DAS.CollectionCalendar.Queries\SFA.DAS.CollectionCalendar.Queries.csproj", "{F5F2C59B-B0C1-4A87-9221-291F886C7A8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.CollectionCalendar.Domain", "SFA.DAS.CollectionCalendar.Domain\SFA.DAS.CollectionCalendar.Domain.csproj", "{C3F217CD-1A24-42A6-B294-46B916EAD5AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.CollectionCalendar.DataTransferObjects", "SFA.DAS.CollectionCalendar.DataTransferObjects\SFA.DAS.CollectionCalendar.DataTransferObjects.csproj", "{7D1AA88D-C671-4949-A46B-EF6982CE87FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{855C1A09-A30C-46BC-A6BC-56067FFE7935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{855C1A09-A30C-46BC-A6BC-56067FFE7935}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{855C1A09-A30C-46BC-A6BC-56067FFE7935}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{855C1A09-A30C-46BC-A6BC-56067FFE7935}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66CC823C-6335-49F1-A1BC-F478EBD351C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66CC823C-6335-49F1-A1BC-F478EBD351C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66CC823C-6335-49F1-A1BC-F478EBD351C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66CC823C-6335-49F1-A1BC-F478EBD351C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A5ABB33-FF20-417B-9D77-38917DBBC7F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A5ABB33-FF20-417B-9D77-38917DBBC7F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A5ABB33-FF20-417B-9D77-38917DBBC7F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A5ABB33-FF20-417B-9D77-38917DBBC7F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5F2C59B-B0C1-4A87-9221-291F886C7A8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5F2C59B-B0C1-4A87-9221-291F886C7A8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5F2C59B-B0C1-4A87-9221-291F886C7A8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5F2C59B-B0C1-4A87-9221-291F886C7A8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3F217CD-1A24-42A6-B294-46B916EAD5AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3F217CD-1A24-42A6-B294-46B916EAD5AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3F217CD-1A24-42A6-B294-46B916EAD5AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3F217CD-1A24-42A6-B294-46B916EAD5AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D1AA88D-C671-4949-A46B-EF6982CE87FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D1AA88D-C671-4949-A46B-EF6982CE87FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D1AA88D-C671-4949-A46B-EF6982CE87FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D1AA88D-C671-4949-A46B-EF6982CE87FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FAF80F56-3FE7-4096-8CE3-2DE3A7106DD2}
+	EndGlobalSection
+EndGlobal
