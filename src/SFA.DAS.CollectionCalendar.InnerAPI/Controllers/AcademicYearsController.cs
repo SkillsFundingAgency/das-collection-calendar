@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SFA.DAS.CollectionCalendar.DataTransferObjects;
 using SFA.DAS.CollectionCalendar.Queries;
-using SFA.DAS.CollectionCalendar.Queries.GetAcademicYear;
+using SFA.DAS.CollectionCalendar.Queries.GetAcademicYearForDate;
 
 namespace SFA.DAS.CollectionCalendar.InnerAPI.Controllers
 {
@@ -16,12 +16,12 @@ namespace SFA.DAS.CollectionCalendar.InnerAPI.Controllers
         }
 
         [HttpGet]
-        [Route("academicyears/{academicYear}")]
-        [ProducesResponseType(typeof(AcademicYear), 200)]
-        public async Task<IActionResult> Get(string academicYear)
+        [Route("academicyears/{date}")]
+        [ProducesResponseType(typeof(AcademicYearDetails), 200)]
+        public async Task<IActionResult> GetForDate(DateTime date)
         {
-            var request = new GetAcademicYearRequest(academicYear);
-            var response = await _queryDispatcher.Send<GetAcademicYearRequest, GetAcademicYearResponse>(request);
+            var request = new GetAcademicYearForDateRequest(date);
+            var response = await _queryDispatcher.Send<GetAcademicYearForDateRequest, GetAcademicYearForDateResponse>(request);
 
             if (response.AcademicYear == null)
             {

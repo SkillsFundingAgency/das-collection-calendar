@@ -5,15 +5,17 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DAS.CollectionCalendar.InnerAPI", "SFA.DAS.CollectionCalendar.InnerAPI\SFA.DAS.CollectionCalendar.InnerAPI.csproj", "{855C1A09-A30C-46BC-A6BC-56067FFE7935}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.CollectionCalendar.Infrastructure", "SFA.DAS.CollectionCalendar.Infrastructure\SFA.DAS.CollectionCalendar.Infrastructure.csproj", "{66CC823C-6335-49F1-A1BC-F478EBD351C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DAS.CollectionCalendar.Infrastructure", "SFA.DAS.CollectionCalendar.Infrastructure\SFA.DAS.CollectionCalendar.Infrastructure.csproj", "{66CC823C-6335-49F1-A1BC-F478EBD351C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.CollectionCalendar.DataAccess", "SFA.DAS.CollectionCalendar.DataAccess\SFA.DAS.CollectionCalendar.DataAccess.csproj", "{6A5ABB33-FF20-417B-9D77-38917DBBC7F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DAS.CollectionCalendar.DataAccess", "SFA.DAS.CollectionCalendar.DataAccess\SFA.DAS.CollectionCalendar.DataAccess.csproj", "{6A5ABB33-FF20-417B-9D77-38917DBBC7F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.CollectionCalendar.Queries", "SFA.DAS.CollectionCalendar.Queries\SFA.DAS.CollectionCalendar.Queries.csproj", "{F5F2C59B-B0C1-4A87-9221-291F886C7A8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DAS.CollectionCalendar.Queries", "SFA.DAS.CollectionCalendar.Queries\SFA.DAS.CollectionCalendar.Queries.csproj", "{F5F2C59B-B0C1-4A87-9221-291F886C7A8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.CollectionCalendar.Domain", "SFA.DAS.CollectionCalendar.Domain\SFA.DAS.CollectionCalendar.Domain.csproj", "{C3F217CD-1A24-42A6-B294-46B916EAD5AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DAS.CollectionCalendar.Domain", "SFA.DAS.CollectionCalendar.Domain\SFA.DAS.CollectionCalendar.Domain.csproj", "{C3F217CD-1A24-42A6-B294-46B916EAD5AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DAS.CollectionCalendar.DataTransferObjects", "SFA.DAS.CollectionCalendar.DataTransferObjects\SFA.DAS.CollectionCalendar.DataTransferObjects.csproj", "{7D1AA88D-C671-4949-A46B-EF6982CE87FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DAS.CollectionCalendar.DataTransferObjects", "SFA.DAS.CollectionCalendar.DataTransferObjects\SFA.DAS.CollectionCalendar.DataTransferObjects.csproj", "{7D1AA88D-C671-4949-A46B-EF6982CE87FB}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SFA.DAS.CollectionCalendar.Database", "SFA.DAS.CollectionCalendar.Database\SFA.DAS.CollectionCalendar.Database.sqlproj", "{A0961153-11F0-4D5B-B5D6-683FC8F5B810}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,12 @@ Global
 		{7D1AA88D-C671-4949-A46B-EF6982CE87FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D1AA88D-C671-4949-A46B-EF6982CE87FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D1AA88D-C671-4949-A46B-EF6982CE87FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0961153-11F0-4D5B-B5D6-683FC8F5B810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0961153-11F0-4D5B-B5D6-683FC8F5B810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0961153-11F0-4D5B-B5D6-683FC8F5B810}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A0961153-11F0-4D5B-B5D6-683FC8F5B810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0961153-11F0-4D5B-B5D6-683FC8F5B810}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0961153-11F0-4D5B-B5D6-683FC8F5B810}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using SFA.DAS.CollectionCalendar.DataAccess.Repositories;
 using SFA.DAS.CollectionCalendar.Domain.Repositories;
-using SFA.DAS.CollectionCalendar.Queries.GetAcademicYear;
+using SFA.DAS.CollectionCalendar.Queries.GetAcademicYearForDate;
 
 namespace SFA.DAS.CollectionCalendar.Queries
 {
@@ -19,7 +19,7 @@ namespace SFA.DAS.CollectionCalendar.Queries
                         .AsImplementedInterfaces()
                         .WithTransientLifetime();
 
-                    scan.FromAssembliesOf(typeof(GetAcademicYearQueryHandler))
+                    scan.FromAssembliesOf(typeof(GetAcademicYearForDateQueryHandler))
                         .AddClasses(classes => classes.AssignableTo(typeof(IQueryHandler<,>)))
                         .AsImplementedInterfaces()
                         .WithTransientLifetime();

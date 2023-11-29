@@ -2,6 +2,6 @@
 {
     public interface IAcademicYearQueryRepository
     {
-        Task<DataTransferObjects.AcademicYear?> Get(string academicYear);
+        Task<DataTransferObjects.AcademicYearDetails?> GetForDate(DateTime date);
     }
 }

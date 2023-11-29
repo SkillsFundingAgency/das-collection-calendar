@@ -1,4 +1,5 @@
-﻿using SFA.DAS.CollectionCalendar.Domain.Repositories;
+﻿using Microsoft.EntityFrameworkCore;
+using SFA.DAS.CollectionCalendar.Domain.Repositories;
 
 namespace SFA.DAS.CollectionCalendar.DataAccess.Repositories
 {
@@ -12,16 +13,14 @@ namespace SFA.DAS.CollectionCalendar.DataAccess.Repositories
             _lazyContext = dbContext;
         }
 
-        public async Task<DataTransferObjects.AcademicYear?> Get(string academicYear)
+        public async Task<DataTransferObjects.AcademicYearDetails?> GetForDate(DateTime date)
         {
-            /*var dataModels = await DbContext.Apprenticeships
-                .Include(x => x.Approvals)
-                .Where(x => x.Approvals.Any(x => x.UKPRN == ukprn && (fundingPlatform == null || x.FundingPlatform == fundingPlatform)))
-                .ToListAsync();
+            var academicYearDetails = await DbContext.AcademicYearDetails
+                .Where(x => x.StartDate <= date && x.EndDate >= date)
+                .Select(x => new DataTransferObjects.AcademicYearDetails(x.AcademicYear, x.StartDate, x.EndDate, x.HardCloseDate))
+                .SingleOrDefaultAsync();
 
-            var result = dataModels.Select(x => new DataTransferObjects.Apprenticeship { Uln = x.Uln, LastName = x.LastName, FirstName = x.FirstName });
-            return result; */
-            throw new NotImplementedException();
+            return academicYearDetails;
         }
     }
 }

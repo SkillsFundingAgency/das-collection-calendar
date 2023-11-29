@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
+using SFA.DAS.CollectionCalendar.DataAccess.Entities;
 
 namespace SFA.DAS.CollectionCalendar.DataAccess
 {
@@ -10,8 +11,13 @@ namespace SFA.DAS.CollectionCalendar.DataAccess
         {
         }
 
+        public virtual DbSet<AcademicYearDetail> AcademicYearDetails { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<AcademicYearDetail>()
+                .HasKey(a => new { a.AcademicYear });
+
             base.OnModelCreating(modelBuilder);
         }
     }
