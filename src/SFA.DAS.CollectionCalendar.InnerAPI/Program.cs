@@ -10,19 +10,22 @@ using SFA.DAS.CollectionCalendar.Queries;
 namespace SFA.DAS.CollectionCalendar.InnerApi
 {
     [ExcludeFromCodeCoverage]
-    public static class Program
+    public class Program
     {
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Configuration.AddAzureTableStorage(options =>
+            if (!ConfigurationIsAcceptanceTests(builder.Configuration))
             {
-                options.ConfigurationKeys = new[] { "SFA.DAS.CollectionCalendar" };
-                options.StorageConnectionString = builder.Configuration["ConfigurationStorageConnectionString"];
-                options.EnvironmentName = builder.Configuration["EnvironmentName"];
-                options.PreFixConfigurationKeys = false;
-            });
+                builder.Configuration.AddAzureTableStorage(options =>
+                {
+                    options.ConfigurationKeys = new[] {"SFA.DAS.CollectionCalendar"};
+                    options.StorageConnectionString = builder.Configuration["ConfigurationStorageConnectionString"];
+                    options.EnvironmentName = builder.Configuration["EnvironmentName"];
+                    options.PreFixConfigurationKeys = false;
+                });
+            }
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
@@ -68,6 +71,11 @@ namespace SFA.DAS.CollectionCalendar.InnerApi
             {
                 return !configuration!["EnvironmentName"].Equals("LOCAL", StringComparison.CurrentCultureIgnoreCase);
             }
+        }
+
+        private static bool ConfigurationIsAcceptanceTests(IConfiguration configuration)
+        {
+            return configuration["EnvironmentName"].Equals("LOCAL_ACCEPTANCE_TESTS", StringComparison.CurrentCultureIgnoreCase);
         }
     }
 }

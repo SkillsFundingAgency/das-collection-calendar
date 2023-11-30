@@ -11,7 +11,7 @@ namespace SFA.DAS.CollectionCalendar.DataAccess
         {
         }
 
-        public virtual DbSet<AcademicYearDetail> AcademicYearDetails { get; set; }
+        public virtual DbSet<AcademicYearDetail> AcademicYearDetails { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
