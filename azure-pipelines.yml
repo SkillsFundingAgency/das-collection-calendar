@@ -19,7 +19,7 @@ variables:
 - name: BuildPlatform
   value: any cpu
 - group: RELEASE Management Resources
-- group: das-collection-calender
+- group: RELEASE das-collection-calendar
 - name: Deploy
   value: $[or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.Reason'], 'Manual'), eq(variables['Build.Reason'], 'PullRequest'))]
 
@@ -62,7 +62,7 @@ stages:
   variables:
   - group: DevTest Management Resources
   - group: AT DevTest Shared Resources
-  - group: AT das-collection-calender
+  - group: AT das-collection-calendar
   jobs:
   - template: pipeline-templates/job/deploy.yml
     parameters:
@@ -77,7 +77,7 @@ stages:
   variables:
   - group: DevTest Management Resources
   - group: TEST DevTest Shared Resources
-  - group: TEST das-collection-calender
+  - group: TEST das-collection-calendar
   jobs:
   - template: pipeline-templates/job/deploy.yml
     parameters:
@@ -92,7 +92,7 @@ stages:
   variables:
   - group: DevTest Management Resources
   - group: TEST2 DevTest Shared Resources
-  - group: TEST2 das-collection-calender
+  - group: TEST2 das-collection-calendar
   jobs:
   - template: pipeline-templates/job/deploy.yml
     parameters:
@@ -107,7 +107,7 @@ stages:
   variables:
   - group: PreProd Management Resources
   - group: PreProd Shared Resources
-  - group: PreProd das-collection-calender
+  - group: PreProd das-collection-calendar
   jobs:
   - template: pipeline-templates/job/deploy.yml
     parameters:
@@ -151,7 +151,7 @@ stages:
   variables:
   - group: DevTest Management Resources
   - group: DEMO DevTest Shared Resources
-  - group: DEMO das-collection-calender
+  - group: DEMO das-collection-calendar
   jobs:
   - template: pipeline-templates/job/deploy.yml
     parameters:
