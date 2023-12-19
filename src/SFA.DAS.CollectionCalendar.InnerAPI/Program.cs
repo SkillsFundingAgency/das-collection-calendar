@@ -16,6 +16,8 @@ namespace SFA.DAS.CollectionCalendar.InnerApi
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddApplicationInsightsTelemetry();
+
             if (!ConfigurationIsAcceptanceTests(builder.Configuration))
             {
                 builder.Configuration.AddAzureTableStorage(options =>
