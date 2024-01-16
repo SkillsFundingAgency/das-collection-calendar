@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SFA.DAS.CollectionCalendar.DataTransferObjects;
 using SFA.DAS.CollectionCalendar.Queries;
 using SFA.DAS.CollectionCalendar.Queries.GetAcademicYearForDate;
@@ -9,6 +10,7 @@ namespace SFA.DAS.CollectionCalendar.InnerAPI.Controllers
     ///    Academic years
     /// </summary>
     [ApiController]
+    [Authorize]
     public class AcademicYearsController : Controller
     {
         private readonly IQueryDispatcher _queryDispatcher;
