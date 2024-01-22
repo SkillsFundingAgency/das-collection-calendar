@@ -7,9 +7,9 @@ DECLARE @ACADEMIC_YEAR TABLE
     [HardCloseDate] DATETIME NOT NULL
 )
 INSERT INTO @ACADEMIC_YEAR ([Id], [StartDate], [EndDate], [HardCloseDate]) VALUES ('2021', '2020-08-01', '2021-07-31', '2021-10-15')
-INSERT INTO @ACADEMIC_YEAR ([Id], [StartDate], [EndDate], [HardCloseDate]) VALUES ('2122', '2021-08-01', '2022-07-31', '2022-10-15')
-INSERT INTO @ACADEMIC_YEAR ([Id], [StartDate], [EndDate], [HardCloseDate]) VALUES ('2223', '2022-08-01', '2023-07-31', '2023-10-15')
-INSERT INTO @ACADEMIC_YEAR ([Id], [StartDate], [EndDate], [HardCloseDate]) VALUES ('2324', '2023-08-01', '2024-07-31', '2024-10-15')
+INSERT INTO @ACADEMIC_YEAR ([Id], [StartDate], [EndDate], [HardCloseDate]) VALUES ('2122', '2021-08-01', '2022-07-31', '2022-10-20')
+INSERT INTO @ACADEMIC_YEAR ([Id], [StartDate], [EndDate], [HardCloseDate]) VALUES ('2223', '2022-08-01', '2023-07-31', '2023-10-19')
+INSERT INTO @ACADEMIC_YEAR ([Id], [StartDate], [EndDate], [HardCloseDate]) VALUES ('2324', '2023-08-01', '2024-07-31', '2024-10-17')
 INSERT INTO @ACADEMIC_YEAR ([Id], [StartDate], [EndDate], [HardCloseDate]) VALUES ('2425', '2024-08-01', '2025-07-31', '2025-10-15')
 
 PRINT '********************* Updating table [incentives].[AcademicYear] *****************************'
