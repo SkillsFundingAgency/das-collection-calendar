@@ -35,7 +35,7 @@ namespace SFA.DAS.CollectionCalendar.InnerAPI.Controllers
 
             if (response.AcademicYear == null)
             {
-                return NotFound();
+                return NotFound("The academic year has not had collection dates published for yet.");
             }
 
             return Ok(response.AcademicYear);
