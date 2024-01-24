@@ -6,6 +6,8 @@ using SFA.DAS.CollectionCalendar.DataAccess;
 using SFA.DAS.CollectionCalendar.Infrastructure;
 using SFA.DAS.CollectionCalendar.Infrastructure.Configuration;
 using SFA.DAS.CollectionCalendar.Queries;
+using SFA.DAS.CollectionCalendar.InnerAPI.Identity.Authentication;
+using SFA.DAS.CollectionCalendar.InnerAPI.Identity.Authorization;
 
 namespace SFA.DAS.CollectionCalendar.InnerApi
 {
@@ -51,6 +53,8 @@ namespace SFA.DAS.CollectionCalendar.InnerApi
             builder.Services.AddSingleton(x => applicationSettings);
             builder.Services.AddQueryServices();
             builder.Services.AddHealthChecks();
+            builder.Services.AddApiAuthentication(applicationSettings, builder.Environment.IsDevelopment());
+            builder.Services.AddApiAuthorization(builder.Environment.IsDevelopment());
             var app = builder.Build();
 
             app.MapHealthChecks("/ping");
@@ -63,6 +67,7 @@ namespace SFA.DAS.CollectionCalendar.InnerApi
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllers();

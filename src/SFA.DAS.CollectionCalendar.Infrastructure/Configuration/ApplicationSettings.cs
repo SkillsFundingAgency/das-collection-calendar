@@ -6,5 +6,6 @@ namespace SFA.DAS.CollectionCalendar.Infrastructure.Configuration
     public class ApplicationSettings
     {
         public string DbConnectionString { get; set; } = null!;
+        public AzureActiveDirectoryConfiguration AzureActiveDirectoryConfiguration { get; set; } = null!;
     }
 }

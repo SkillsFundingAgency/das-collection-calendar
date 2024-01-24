@@ -1,11 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SFA.DAS.CollectionCalendar.DataTransferObjects;
 using SFA.DAS.CollectionCalendar.Queries;
 using SFA.DAS.CollectionCalendar.Queries.GetAcademicYearForDate;
 
 namespace SFA.DAS.CollectionCalendar.InnerAPI.Controllers
 {
+    /// <summary>
+    ///    Academic years
+    /// </summary>
     [ApiController]
+    [Authorize]
     public class AcademicYearsController : Controller
     {
         private readonly IQueryDispatcher _queryDispatcher;
@@ -15,6 +20,11 @@ namespace SFA.DAS.CollectionCalendar.InnerAPI.Controllers
             _queryDispatcher = queryDispatcher;
         }
 
+        /// <summary>
+        /// Gets the academic year for a given date
+        /// </summary>
+        /// <param name="date">The date to get the corresponding academic year for</param>
+        /// <returns>The academic year with start date, end date, and hard close date</returns>
         [HttpGet]
         [Route("academicyears/{date}")]
         [ProducesResponseType(typeof(AcademicYearDetails), 200)]
