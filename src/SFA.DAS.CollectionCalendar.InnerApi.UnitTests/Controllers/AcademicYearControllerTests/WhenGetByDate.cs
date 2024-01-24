@@ -55,7 +55,7 @@ namespace SFA.DAS.CollectionCalendar.InnerApi.UnitTests.Controllers.AcademicYear
 
             var result = await _sut.GetForDate(date);
 
-            result.Should().BeOfType<NotFoundResult>();
+            result.Should().BeOfType<NotFoundObjectResult>();
         }
     }
 }
