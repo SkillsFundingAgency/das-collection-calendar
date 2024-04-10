@@ -1,7 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Microsoft.Extensions.DependencyInjection;
 using SFA.DAS.CollectionCalendar.DataAccess.Repositories;
-using SFA.DAS.CollectionCalendar.Domain.Repositories;
 using SFA.DAS.CollectionCalendar.Queries.GetAcademicYearForDate;
 
 namespace SFA.DAS.CollectionCalendar.Queries

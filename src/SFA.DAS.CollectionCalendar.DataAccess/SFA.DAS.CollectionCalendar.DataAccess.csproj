@@ -14,8 +14,4 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.2.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\SFA.DAS.CollectionCalendar.Domain\SFA.DAS.CollectionCalendar.Domain.csproj" />
-  </ItemGroup>
-
 </Project>

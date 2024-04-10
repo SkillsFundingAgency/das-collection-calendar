@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SFA.DAS.CollectionCalendar.DataAccess\SFA.DAS.CollectionCalendar.DataAccess.csproj" />
+    <ProjectReference Include="..\SFA.DAS.CollectionCalendar.DataTransferObjects\SFA.DAS.CollectionCalendar.DataTransferObjects.csproj" />
     <ProjectReference Include="..\SFA.DAS.CollectionCalendar.Infrastructure\SFA.DAS.CollectionCalendar.Infrastructure.csproj" />
     <ProjectReference Include="..\SFA.DAS.CollectionCalendar.Queries\SFA.DAS.CollectionCalendar.Queries.csproj" />
   </ItemGroup>

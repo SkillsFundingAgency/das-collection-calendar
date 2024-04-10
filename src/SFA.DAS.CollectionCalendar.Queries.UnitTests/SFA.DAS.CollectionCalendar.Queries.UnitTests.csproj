@@ -22,7 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SFA.DAS.CollectionCalendar.Domain\SFA.DAS.CollectionCalendar.Domain.csproj" />
     <ProjectReference Include="..\SFA.DAS.CollectionCalendar.Queries\SFA.DAS.CollectionCalendar.Queries.csproj" />
   </ItemGroup>
 
