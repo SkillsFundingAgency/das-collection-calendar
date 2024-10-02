@@ -8,6 +8,8 @@ using SFA.DAS.CollectionCalendar.Infrastructure.Configuration;
 using SFA.DAS.CollectionCalendar.Queries;
 using SFA.DAS.CollectionCalendar.InnerAPI.Identity.Authentication;
 using SFA.DAS.CollectionCalendar.InnerAPI.Identity.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using SFA.DAS.CollectionCalendar.InnerAPI;
 
 namespace SFA.DAS.CollectionCalendar.InnerApi
 {
@@ -15,6 +17,15 @@ namespace SFA.DAS.CollectionCalendar.InnerApi
     public class Program
     {
         public static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+        }
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
+
+/*        public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -83,6 +94,6 @@ namespace SFA.DAS.CollectionCalendar.InnerApi
         private static bool ConfigurationIsAcceptanceTests(IConfiguration configuration)
         {
             return configuration["EnvironmentName"].Equals("LOCAL_ACCEPTANCE_TESTS", StringComparison.CurrentCultureIgnoreCase);
-        }
+        } */
     }
 }
