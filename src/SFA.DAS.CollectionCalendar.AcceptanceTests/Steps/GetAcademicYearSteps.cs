@@ -8,23 +8,23 @@ using TechTalk.SpecFlow;
 namespace SFA.DAS.CollectionCalendar.AcceptanceTests.Steps
 {
     [Binding]
-    [Scope(Feature = "GetAcademicYearByDate")]
-    public class GetAcademicYearByDateSteps
+    [Scope(Feature = "GetAcademicYear")]
+    public class GetAcademicYearSteps
     {
         private readonly TestContext _testContext;
         private HttpStatusCode _apiStatus;
         private AcademicYearDetails _apiData;
 
-        public GetAcademicYearByDateSteps(TestContext testContext)
+        public GetAcademicYearSteps(TestContext testContext)
         {
             _testContext = testContext;
         }
 
-        [Given("an academic year is requested for a valid date")]
+        [Given("an academic year is requested for a valid year")]
         public async Task GivenAnAcademicYearIsRequestedByDate()
         {
-            var date = new DateTime(2023, 11, 1);
-            var url = $"/academicyears?date={date.ToString("yyyy-MM-dd")}";
+            var year = 2324;
+            var url = $"/academicyears/{year}";
             var (status, data) = await _testContext.CollectionCalendarApi.Client.GetValueAsync<AcademicYearDetails>(url);
 
             _apiStatus = status;

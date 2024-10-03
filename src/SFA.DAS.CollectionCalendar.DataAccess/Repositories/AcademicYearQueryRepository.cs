@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SFA.DAS.CollectionCalendar.DataTransferObjects;
 using SFA.DAS.CollectionCalendar.Domain.Repositories;
 
 namespace SFA.DAS.CollectionCalendar.DataAccess.Repositories
@@ -17,6 +18,16 @@ namespace SFA.DAS.CollectionCalendar.DataAccess.Repositories
         {
             var academicYearDetails = await DbContext.AcademicYearDetails
                 .Where(x => x.StartDate <= date && x.EndDate >= date)
+                .Select(x => new DataTransferObjects.AcademicYearDetails(x.AcademicYear, x.StartDate, x.EndDate, x.HardCloseDate))
+                .SingleOrDefaultAsync();
+
+            return academicYearDetails;
+        }
+
+        public async Task<AcademicYearDetails?> Get(int year)
+        {
+            var academicYearDetails = await DbContext.AcademicYearDetails
+                .Where(x => x.AcademicYear == year.ToString())
                 .Select(x => new DataTransferObjects.AcademicYearDetails(x.AcademicYear, x.StartDate, x.EndDate, x.HardCloseDate))
                 .SingleOrDefaultAsync();
 
