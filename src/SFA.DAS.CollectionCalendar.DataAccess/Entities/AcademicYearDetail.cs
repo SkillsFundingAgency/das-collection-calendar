@@ -8,6 +8,6 @@
         public string AcademicYear { get; set; } = null!;
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public DateTime HardCloseDate { get; set; }
+        public DateTime? HardCloseDate { get; set; }
     }
 }
