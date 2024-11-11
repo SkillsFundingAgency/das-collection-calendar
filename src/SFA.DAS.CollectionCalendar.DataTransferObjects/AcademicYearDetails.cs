@@ -2,7 +2,7 @@
 {
     public class AcademicYearDetails
     {
-        public AcademicYearDetails(string academicYear, DateTime startDate, DateTime endDate, DateTime hardCloseDate)
+        public AcademicYearDetails(string academicYear, DateTime startDate, DateTime endDate, DateTime? hardCloseDate)
         {
             AcademicYear = academicYear;
             StartDate = startDate;
@@ -13,6 +13,6 @@
         public string AcademicYear { get; }
         public DateTime StartDate { get; }
         public DateTime EndDate { get; }
-        public DateTime HardCloseDate { get; }
+        public DateTime? HardCloseDate { get; }
     }
 }
