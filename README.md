@@ -4,8 +4,6 @@
 
 <img src="https://avatars.githubusercontent.com/u/9841374?s=200&v=4" align="right" alt="UK Government logo">
 
-_Update these badges with the correct information for this project. These give the status of the project at a glance and also sign-post developers to the appropriate resources they will need to get up and running_
-
 [![Build Status](https://dev.azure.com/sfa-gov-uk/Digital%20Apprenticeship%20Service/_apis/build/status/das-collection-calendar?branchName=master)](https://dev.azure.com/sfa-gov-uk/Digital%20Apprenticeship%20Service/_build/latest?definitionId=das-collection-calendar&branchName=master)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=_projectId_&metric=alert_status)](https://sonarcloud.io/dashboard?id=_projectId_)
 [![Jira Project](https://img.shields.io/badge/Jira-Project-blue)](https://skillsfundingagency.atlassian.net/jira/software/c/projects/FLP/boards/753)
@@ -25,7 +23,7 @@ The API provides a number of GET endpoints responsible for querying the collecti
 ### Pre-Requisites
 
 * A clone of this repository
-* A code editor that supports .Net6
+* A code editor that supports .Net8
 * Azure Storage Emulator (Azureite)
 * A SQL Server instance
 
