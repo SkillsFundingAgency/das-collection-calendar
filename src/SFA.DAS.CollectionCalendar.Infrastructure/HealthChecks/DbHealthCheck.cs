@@ -9,10 +9,12 @@ namespace SFA.DAS.CollectionCalendar.Infrastructure.HealthChecks;
 public class DbHealthCheck : BaseHealthCheck<DbHealthCheck>
 {
     private readonly string _connectionString;
+    private readonly ISqlAzureIdentityTokenProvider? _tokenProvider;
 
-    public DbHealthCheck(string connectionString, ILogger<DbHealthCheck> logger) : base(logger)
+    public DbHealthCheck(string connectionString, ILogger<DbHealthCheck> logger, ISqlAzureIdentityTokenProvider? tokenProvider) : base(logger)
     {
         _connectionString = connectionString;
+        _tokenProvider = tokenProvider;
     }
 
     public override async Task<HealthCheckResult> HealthCheck(CancellationToken cancellationToken)
@@ -20,6 +22,13 @@ public class DbHealthCheck : BaseHealthCheck<DbHealthCheck>
         try
         {
             using var connection = new SqlConnection(_connectionString);
+
+            if (_tokenProvider != null)
+            {
+                var token = await _tokenProvider.GetAccessTokenAsync();
+                connection.AccessToken = token;
+            }
+
             await connection.OpenAsync(cancellationToken);
 
             using var command = connection.CreateCommand();

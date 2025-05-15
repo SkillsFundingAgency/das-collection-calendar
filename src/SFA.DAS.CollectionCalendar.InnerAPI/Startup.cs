@@ -41,11 +41,13 @@ namespace SFA.DAS.CollectionCalendar.InnerAPI
 
             var applicationSettings = new ApplicationSettings();
             _configuration.Bind(nameof(ApplicationSettings), applicationSettings);
+            var sqlConnectionNeedsAccessToken = !_configuration.IsLocal();
+
             services.AddDbContext<CollectionCalendarDataContext>();
-            services.AddEntityFramework(applicationSettings, !_configuration.IsLocal());
+            services.AddEntityFramework(applicationSettings, sqlConnectionNeedsAccessToken);
             services.AddSingleton(x => applicationSettings);
             services.AddQueryServices();
-            services.AddApplicationHealthChecks(applicationSettings);
+            services.AddApplicationHealthChecks(applicationSettings, sqlConnectionNeedsAccessToken);
             services.AddApiAuthentication(applicationSettings, _env.IsDevelopment());
             services.AddApiAuthorization(_env.IsDevelopment());
         }

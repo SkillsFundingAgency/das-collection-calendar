@@ -33,9 +33,12 @@ public static class ServiceCollectionExtensions
         return services.AddScoped(provider => new Lazy<CollectionCalendarDataContext>(provider.GetService<CollectionCalendarDataContext>() ?? throw new ArgumentException("CollectionCalendarDataContext")));
     }
 
-    public static IServiceCollection AddApplicationHealthChecks(this IServiceCollection services, ApplicationSettings applicationSettings)
+    public static IServiceCollection AddApplicationHealthChecks(this IServiceCollection services, ApplicationSettings applicationSettings, bool sqlConnectionNeedsAccessToken)
     {
-        services.AddSingleton(sp => new DbHealthCheck(applicationSettings.DbConnectionString, sp.GetService<ILogger<DbHealthCheck>>()!));
+        services.AddSingleton(sp => new DbHealthCheck(
+            applicationSettings.DbConnectionString, 
+            sp.GetService<ILogger<DbHealthCheck>>()!, 
+            sp.GetSqlAzureIdentityTokenProvider(sqlConnectionNeedsAccessToken)));
         services.AddHealthChecks().AddCheck<DbHealthCheck>("Database");
         return services;
     }
