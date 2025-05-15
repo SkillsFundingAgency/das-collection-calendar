@@ -1,12 +1,11 @@
 ﻿using Microsoft.OpenApi.Models;
 using SFA.DAS.CollectionCalendar.DataAccess;
-using SFA.DAS.CollectionCalendar.Infrastructure.Configuration;
-using System.Reflection;
 using SFA.DAS.CollectionCalendar.Infrastructure;
+using SFA.DAS.CollectionCalendar.Infrastructure.Configuration;
 using SFA.DAS.CollectionCalendar.InnerAPI.Identity.Authentication;
 using SFA.DAS.CollectionCalendar.InnerAPI.Identity.Authorization;
 using SFA.DAS.CollectionCalendar.Queries;
-using Microsoft.AspNetCore.Builder;
+using System.Reflection;
 
 namespace SFA.DAS.CollectionCalendar.InnerAPI
 {
@@ -46,7 +45,7 @@ namespace SFA.DAS.CollectionCalendar.InnerAPI
             services.AddEntityFramework(applicationSettings, !_configuration.IsLocal());
             services.AddSingleton(x => applicationSettings);
             services.AddQueryServices();
-            services.AddHealthChecks();
+            services.AddApplicationHealthChecks(applicationSettings);
             services.AddApiAuthentication(applicationSettings, _env.IsDevelopment());
             services.AddApiAuthorization(_env.IsDevelopment());
         }
@@ -74,7 +73,12 @@ namespace SFA.DAS.CollectionCalendar.InnerAPI
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "api/{controller=EmployerIncentives}/{action=index}/{id?}");
+
+                endpoints.MapHealthChecks("/ping");   // Both /ping 
+                endpoints.MapHealthChecks("/");       // and / are used for health checks
             });
+
+
 
             app.UseSwagger();
             app.UseSwaggerUI();
