@@ -8,6 +8,7 @@ namespace SFA.DAS.CollectionCalendar.AcceptanceTests
 {
     public static class HttpClientExtensions
     {
+        private static readonly JsonSerializerOptions JsonOptions = new() { PropertyNameCaseInsensitive = true };
         public static async Task<(HttpStatusCode, T)> GetValueAsync<T>(this HttpClient client, string url, CancellationToken cancellationToken = default)
         {
             using var response = await client.GetAsync(url, cancellationToken);
@@ -20,7 +21,7 @@ namespace SFA.DAS.CollectionCalendar.AcceptanceTests
                 return (response.StatusCode, default);
 
             var content = await response.Content.ReadAsStringAsync();
-            var responseValue = JsonSerializer.Deserialize<T>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            var responseValue = JsonSerializer.Deserialize<T>(content, JsonOptions);
 
             return (response.StatusCode, responseValue);
         }
