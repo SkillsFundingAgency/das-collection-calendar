@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
+using System.Text.Json;
 
 namespace SFA.DAS.CollectionCalendar.AcceptanceTests
 {
@@ -20,7 +20,7 @@ namespace SFA.DAS.CollectionCalendar.AcceptanceTests
                 return (response.StatusCode, default);
 
             var content = await response.Content.ReadAsStringAsync();
-            var responseValue = JsonConvert.DeserializeObject<T>(content);
+            var responseValue = JsonSerializer.Deserialize<T>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
             return (response.StatusCode, responseValue);
         }
