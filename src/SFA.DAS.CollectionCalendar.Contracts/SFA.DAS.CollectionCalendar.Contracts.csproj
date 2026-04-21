@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>SFA.DAS.CollectionCalendar.Contracts</RootNamespace>
+    <AssemblyName>SFA.DAS.CollectionCalendar.Contracts</AssemblyName>
+    <ApiContractsSwaggerJsonPath>$(MSBuildThisFileDirectory)..\SFA.DAS.CollectionCalendar.InnerAPI\obj\$(Configuration)\net10.0\EndpointInfo\SFA.DAS.CollectionCalendar.InnerAPI.json</ApiContractsSwaggerJsonPath>
+    <ApiContractsNamespace>SFA.DAS.CollectionCalendar.Contracts</ApiContractsNamespace>
+    <ApiContractsOutputDirectory>$(MSBuildProjectDirectory)\Generated</ApiContractsOutputDirectory>
+    <ApiContractsClientName>CollectionCalendar</ApiContractsClientName>
+    <IsPackable>true</IsPackable>
+    <Authors>GOV.UK Education and Skills Funding Agency (ESFA) Digital Apprenticeship Service (DAS)</Authors>
+    <Description>CollectionCalendar inner API request and response contracts for use with APIM.</Description>
+    <PackageLicenseUrl>https://github.com/SkillsFundingAgency/das-shared-packages/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/SkillsFundingAgency/das-collection-calendar</PackageProjectUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SFA.DAS.ApiContracts.Build" Version="17.1.182">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="SFA.DAS.Apim.Shared" Version="17.1.180" />
+  </ItemGroup>
+
+</Project>
