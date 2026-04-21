@@ -2,12 +2,13 @@
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
+using System.Text.Json;
 
 namespace SFA.DAS.CollectionCalendar.AcceptanceTests
 {
     public static class HttpClientExtensions
     {
+        private static readonly JsonSerializerOptions JsonOptions = new() { PropertyNameCaseInsensitive = true };
         public static async Task<(HttpStatusCode, T)> GetValueAsync<T>(this HttpClient client, string url, CancellationToken cancellationToken = default)
         {
             using var response = await client.GetAsync(url, cancellationToken);
@@ -20,7 +21,7 @@ namespace SFA.DAS.CollectionCalendar.AcceptanceTests
                 return (response.StatusCode, default);
 
             var content = await response.Content.ReadAsStringAsync();
-            var responseValue = JsonConvert.DeserializeObject<T>(content);
+            var responseValue = JsonSerializer.Deserialize<T>(content, JsonOptions);
 
             return (response.StatusCode, responseValue);
         }
