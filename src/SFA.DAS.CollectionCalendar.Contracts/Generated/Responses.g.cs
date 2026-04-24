@@ -34,13 +34,13 @@ namespace SFA.DAS.CollectionCalendar.Contracts.ApiResponses
         public string? AcademicYear { get; set; } = default!;
 
         [System.Text.Json.Serialization.JsonPropertyName("startDate")]
-        public System.DateTimeOffset StartDate { get; set; } = default!;
+        public System.DateTime StartDate { get; set; } = default!;
 
         [System.Text.Json.Serialization.JsonPropertyName("endDate")]
-        public System.DateTimeOffset EndDate { get; set; } = default!;
+        public System.DateTime EndDate { get; set; } = default!;
 
         [System.Text.Json.Serialization.JsonPropertyName("hardCloseDate")]
-        public System.DateTimeOffset? HardCloseDate { get; set; } = default!;
+        public System.DateTime? HardCloseDate { get; set; } = default!;
 
     }
 
